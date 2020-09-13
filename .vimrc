@@ -43,10 +43,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 	Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 	Plug 'ludovicchabant/vim-gutentags'
-	" A Vim Plugin for Lively Previewing LaTeX PDF Output
 	Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 	Plug 'morhetz/gruvbox'
-	Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 colorscheme gruvbox
 set bg=dark
@@ -84,12 +82,13 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 	autocmd FileType tex inoremap ,ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
 	autocmd FileType tex inoremap ,ul \begin{itemize}[noitemsep]<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>
 	autocmd FileType tex inoremap ,li <Enter>\item<Space>
+	autocmd FileType tex inoremap ,vs <Enter>\vskip<Space>10pt<Space>
 	autocmd FileType tex inoremap ,ref \ref{}<Space><++><Esc>T{i
 	autocmd FileType tex inoremap ,tab \begin{tabular}<Enter><++><Enter>\end{tabular}<Enter><Enter><++><Esc>4kA{}<Esc>i
 	autocmd FileType tex inoremap ,ot \begin{tableau}<Enter>\inp{<++>}<Tab>\const{<++>}<Tab><++><Enter><++><Enter>\end{tableau}<Enter><Enter><++><Esc>5kA{}<Esc>i
 	autocmd FileType tex inoremap ,can \cand{}<Tab><++><Esc>T{i
 	autocmd FileType tex inoremap ,con \const{}<Tab><++><Esc>T{i
-	autocmd FileType tex inoremap ,v \vio{}<Tab><++><Esc>T{i
+"	autocmd FileType tex inoremap ,v \vio{}<Tab><++><Esc>T{i
 	autocmd FileType tex inoremap ,a \href{}{<++>}<Space><++><Esc>2T{i
 	autocmd FileType tex inoremap ,sc \textsc{}<Space><++><Esc>T{i
 	autocmd FileType tex inoremap ,chap \chapter{}<Enter><Enter><++><Esc>2kf}i
